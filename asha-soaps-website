@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asha Soaps – No Animal Fat, Only Pure Comfort</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #1B4332;
+    --green-mid: #2D6A4F;
+    --green-light: #74C69D;
+    --cream: #FFFBF0;
+    --cream-dark: #F0E8D0;
+    --saffron: #F4A020;
+    --saffron-dark: #D4860A;
+    --white: #FFFFFF;
+    --text-dark: #1A1A1A;
+    --text-mid: #3D3D3D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(27,67,50,0.97); backdrop-filter: blur(10px);
+    padding: 0 5%; display: flex; align-items: center;
+    justify-content: space-between; height: 66px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  }
+  .nav-logo { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.5rem; color: var(--saffron); }
+  .nav-logo span { color: #fff; }
+  .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--saffron); }
+  .nav-cta { background: var(--saffron) !important; color: var(--green-dark) !important; padding: 0.4rem 1.1rem; border-radius: 50px; font-weight: 700 !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d2b1e 0%, var(--green-dark) 40%, var(--green-mid) 100%);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 100px 5% 60px; position: relative; overflow: hidden;
+  }
+  .bubble { position: absolute; border-radius: 50%; border: 2px solid rgba(255,255,255,0.1); animation: float 7s ease-in-out infinite; }
+  .bubble:nth-child(1) { width: 90px; height: 90px; top: 12%; left: 7%; animation-delay: 0s; background: rgba(116,198,157,0.06); }
+  .bubble:nth-child(2) { width: 140px; height: 140px; top: 55%; left: 4%; animation-delay: 1.5s; background: rgba(244,160,32,0.04); }
+  .bubble:nth-child(3) { width: 55px; height: 55px; top: 20%; right: 9%; animation-delay: 0.8s; }
+  .bubble:nth-child(4) { width: 100px; height: 100px; top: 68%; right: 7%; animation-delay: 2.3s; background: rgba(116,198,157,0.05); }
+  .bubble:nth-child(5) { width: 45px; height: 45px; top: 42%; left: 18%; animation-delay: 3s; }
+  .bubble:nth-child(6) { width: 70px; height: 70px; top: 78%; right: 18%; animation-delay: 1.1s; }
+  @keyframes float {
+    0%,100% { transform: translateY(0) scale(1); opacity: 0.25; }
+    50% { transform: translateY(-22px) scale(1.06); opacity: 0.55; }
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 720px; }
+  .hero-badge {
+    display: inline-block; background: rgba(244,160,32,0.15); border: 1px solid var(--saffron);
+    color: var(--saffron); padding: 0.35rem 1.2rem; border-radius: 50px;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .hero h1 { font-family: 'Baloo 2', cursive; font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 800; color: #fff; line-height: 1.05; margin-bottom: 1rem; }
+  .hero h1 .hl { color: var(--saffron); }
+  .hero-tag { font-size: 1.15rem; color: rgba(255,255,255,0.75); margin-bottom: 0.6rem; font-style: italic; }
+  .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; line-height: 1.75; }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--saffron); color: var(--green-dark); padding: 0.85rem 2.2rem;
+    border-radius: 50px; font-weight: 800; font-size: 1rem; text-decoration: none;
+    transition: all 0.25s; box-shadow: 0 4px 20px rgba(244,160,32,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(244,160,32,0.55); background: #ffc040; }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.4); color: #fff; padding: 0.85rem 2.2rem;
+    border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.25s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-3px); }
+  .hero-stats { margin-top: 3.5rem; display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap; }
+  .stat-num { font-family: 'Baloo 2', cursive; font-size: 1.9rem; font-weight: 800; color: var(--saffron); }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ABOUT */
+  .about-wrap { background: #fff; padding: 90px 5%; }
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+  .eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 0.7rem; }
+  .sec-title { font-family: 'Baloo 2', cursive; font-size: clamp(1.8rem, 3.5vw, 2.7rem); font-weight: 800; color: var(--green-dark); line-height: 1.15; margin-bottom: 1.2rem; }
+  .about-text p { font-size: 1.02rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 0.9rem; }
+  .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-top: 1.5rem; }
+  .chip {
+    display: flex; align-items: center; gap: 0.6rem; background: var(--cream);
+    border: 1.5px solid var(--cream-dark); border-radius: 12px;
+    padding: 0.65rem 1rem; font-weight: 600; font-size: 0.88rem; color: var(--green-dark);
+  }
+  .about-card {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    border-radius: 24px; padding: 2.8rem 2.2rem; text-align: center;
+    position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(27,67,50,0.22);
+  }
+  .about-card::before { content:''; position:absolute; width:200px; height:200px; background:rgba(255,255,255,0.05); border-radius:50%; top:-60px; right:-60px; }
+  .about-big-logo { font-family:'Baloo 2',cursive; font-size:3rem; font-weight:800; color:var(--saffron); }
+  .about-big-logo span { color:#fff; }
+  .about-since { color:rgba(255,255,255,0.5); font-size:0.82rem; margin-bottom:0.3rem; letter-spacing:2px; text-transform:uppercase; }
+  .about-tagline-card { color:rgba(255,255,255,0.65); font-style:italic; font-size:0.9rem; margin-bottom:1.8rem; }
+  .about-tags { display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; }
+  .about-tag { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); color:#fff; padding:0.45rem 0.7rem; border-radius:8px; font-size:0.8rem; font-weight:600; }
+
+  /* PRODUCTS */
+  .products-section { padding: 90px 5%; background: var(--cream); }
+  .sec-header { text-align:center; margin-bottom:2.5rem; }
+  .filter-bar { display:flex; gap:0.65rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem; }
+  .filter-btn {
+    background:#fff; border:2px solid var(--cream-dark); color:var(--text-mid);
+    padding:0.5rem 1.3rem; border-radius:50px; font-weight:700; font-size:0.88rem;
+    cursor:pointer; transition:all 0.2s; font-family:'Nunito',sans-serif;
+  }
+  .filter-btn:hover, .filter-btn.active { background:var(--green-dark); border-color:var(--green-dark); color:#fff; }
+  .products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.5rem; max-width:1200px; margin:0 auto; }
+  .pcard {
+    background:#fff; border-radius:20px; overflow:hidden;
+    border:2px solid transparent; transition:all 0.25s; cursor:pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .pcard:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(27,67,50,0.13); border-color:var(--green-light); }
+  .pcard-img { width:100%; height:200px; object-fit:contain; background:var(--cream); padding:1rem; }
+  .pcard-body { padding:1.2rem 1.4rem 1.4rem; }
+  .pcard-cat {
+    display:inline-block; background:var(--cream); color:var(--green-mid);
+    font-size:0.72rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    padding:0.28rem 0.8rem; border-radius:50px; margin-bottom:0.7rem;
+  }
+  .pcard-name { font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:700; color:var(--green-dark); margin-bottom:0.35rem; line-height:1.2; }
+  .pcard-desc { font-size:0.85rem; color:#666; line-height:1.55; margin-bottom:0.9rem; }
+  .pcard-price { font-family:'Baloo 2',cursive; font-size:1.25rem; font-weight:800; color:var(--saffron-dark); }
+  .pcard-note { font-size:0.75rem; color:#999; font-weight:600; }
+
+  /* WHY US */
+  .why-us { background:var(--green-dark); padding:90px 5%; text-align:center; color:#fff; }
+  .why-us .eyebrow { color:var(--saffron); }
+  .why-us .sec-title { color:#fff; margin-bottom:2.8rem; }
+  .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1.8rem; max-width:1100px; margin:0 auto; }
+  .fcard {
+    background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.11);
+    border-radius:20px; padding:1.8rem 1.4rem; transition:all 0.25s;
+  }
+  .fcard:hover { background:rgba(255,255,255,0.12); transform:translateY(-4px); }
+  .fcard-icon { font-size:2.2rem; margin-bottom:0.9rem; display:block; }
+  .fcard-title { font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:700; color:var(--saffron); margin-bottom:0.5rem; }
+  .fcard-desc { font-size:0.88rem; color:rgba(255,255,255,0.65); line-height:1.6; }
+
+  /* INSTAGRAM */
+  .insta-section { padding:90px 5%; background:#fff; text-align:center; }
+  .insta-handle {
+    display:inline-flex; align-items:center; gap:0.5rem; color:var(--green-mid);
+    font-weight:700; font-size:1.05rem; text-decoration:none;
+    padding:0.55rem 1.4rem; border:2px solid var(--cream-dark); border-radius:50px;
+    transition:all 0.2s; margin-bottom:2.2rem;
+  }
+  .insta-handle:hover { background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color:#fff; border-color:transparent; }
+  .insta-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.7rem; max-width:680px; margin:0 auto 2rem; }
+  .insta-box {
+    aspect-ratio:1; background:linear-gradient(135deg,var(--cream),var(--cream-dark));
+    border-radius:12px; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; font-size:1.8rem;
+    border:2px dashed var(--cream-dark); transition:all 0.2s; text-decoration:none;
+  }
+  .insta-box:hover { transform:scale(1.03); background:var(--cream-dark); }
+  .insta-box .il { font-size:0.68rem; font-weight:700; color:var(--green-mid); margin-top:0.35rem; letter-spacing:1px; text-transform:uppercase; }
+  .insta-follow {
+    display:inline-flex; align-items:center; gap:0.6rem;
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color:#fff;
+    padding:0.85rem 2.5rem; border-radius:50px; font-weight:800; font-size:1rem;
+    text-decoration:none; transition:all 0.25s; box-shadow:0 6px 20px rgba(131,58,180,0.3);
+  }
+  .insta-follow:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(131,58,180,0.45); }
+
+  /* CONTACT */
+  .contact-wrap { padding:90px 5%; background:var(--cream); }
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; max-width:1100px; margin:0 auto; }
+  .citem { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.4rem; }
+  .cicon { width:46px; height:46px; background:var(--green-dark); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+  .clabel { font-weight:700; color:var(--green-dark); font-size:0.78rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:0.2rem; }
+  .ctext { font-size:0.95rem; color:var(--text-mid); line-height:1.55; }
+  .cform { background:#fff; border-radius:24px; padding:2.4rem; box-shadow:0 8px 40px rgba(0,0,0,0.06); }
+  .cform-title { font-family:'Baloo 2',cursive; font-size:1.35rem; font-weight:700; color:var(--green-dark); margin-bottom:1.4rem; }
+  .fg { margin-bottom:1.1rem; }
+  .fg label { display:block; font-size:0.83rem; font-weight:700; color:var(--text-mid); margin-bottom:0.38rem; }
+  .fg input, .fg select, .fg textarea {
+    width:100%; padding:0.72rem 1rem; border:2px solid var(--cream-dark); border-radius:12px;
+    font-family:'Nunito',sans-serif; font-size:0.93rem; color:var(--text-dark);
+    background:var(--cream); transition:border-color 0.2s; outline:none;
+  }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color:var(--green-mid); background:#fff; }
+  .fg textarea { min-height:105px; resize:vertical; }
+  .csubmit {
+    width:100%; background:var(--green-dark); color:#fff; padding:0.9rem;
+    border:none; border-radius:50px; font-family:'Nunito',sans-serif;
+    font-size:1rem; font-weight:800; cursor:pointer; transition:all 0.25s;
+  }
+  .csubmit:hover { background:var(--green-mid); transform:translateY(-2px); box-shadow:0 6px 20px rgba(27,67,50,0.3); }
+
+  /* FOOTER */
+  footer { background:var(--green-dark); color:rgba(255,255,255,0.65); padding:3rem 5% 2rem; text-align:center; }
+  .footer-logo { font-family:'Baloo 2',cursive; font-size:1.9rem; font-weight:800; color:var(--saffron); margin-bottom:0.4rem; }
+  .footer-logo span { color:#fff; }
+  .footer-tag { font-style:italic; margin-bottom:1.4rem; font-size:0.88rem; }
+  .footer-links { display:flex; gap:1.8rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.8rem; }
+  .footer-links a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; font-weight:600; transition:color 0.2s; }
+  .footer-links a:hover { color:var(--saffron); }
+  .footer-hr { border:none; border-top:1px solid rgba(255,255,255,0.1); margin:1.4rem 0; }
+  .footer-copy { font-size:0.8rem; color:rgba(255,255,255,0.35); }
+
+  /* REVEAL */
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media(max-width:768px) {
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+    .about { grid-template-columns:1fr; gap:2.5rem; }
+    .about-card { order:-1; }
+    .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
+    .chips { grid-template-columns:1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Asha <span>Soaps</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+  <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🌿 Ulhasnagar's Trusted Brand Since 1951</div>
+    <h1>Asha <span class="hl">Soaps</span></h1>
+    <p class="hero-tag">"No Animal Fat, Only Pure Comfort."</p>
+    <p class="hero-sub">Premium quality cleaning & personal care products — crafted with pure ingredients, trusted by thousands of families and retailers across Ulhasnagar for over 70 years.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">🧼 Explore Products</a>
+      <a href="#contact" class="btn-outline">📦 Bulk Enquiry</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">1951</div><div class="stat-label">Established</div></div>
+      <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Products</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Animal Fat Free</div></div>
+      <div class="stat"><div class="stat-num">Wholesale</div><div class="stat-label">Available</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-wrap">
+  <div class="about reveal">
+    <div class="about-text">
+      <p class="eyebrow">Who We Are</p>
+      <h2 class="sec-title">Ulhasnagar's Own Cleaning Brand</h2>
+      <p>Since 1951, Asha Industries has been the go-to name for premium cleaning and personal care products in Ulhasnagar. With over 70 years of trust, we serve thousands of families, hotels, and retailers every day.</p>
+      <p>Every product we make is completely free from animal fat, crafted from high-quality ingredients that deliver results you can feel — clean skin, fresh homes, spotless clothes.</p>
+      <div class="chips">
+        <div class="chip">🌿 No Animal Fat</div>
+        <div class="chip">💧 Pure Ingredients</div>
+        <div class="chip">📦 Wholesale Available</div>
+        <div class="chip">🏆 70+ Years Trusted</div>
+      </div>
+    </div>
+    <div class="about-card">
+      <div class="about-since">Est. 1951</div>
+      <div class="about-big-logo">Asha <span>Soaps</span></div>
+      <div class="about-tagline-card">"No Animal Fat, Only Pure Comfort."</div>
+      <div class="about-tags">
+        <div class="about-tag">🧼 Bathing Soaps</div>
+        <div class="about-tag">🫧 Handwash</div>
+        <div class="about-tag">👕 Washing Soaps</div>
+        <div class="about-tag">🧹 Floor Cleaners</div>
+        <div class="about-tag">🌸 Air Fresheners</div>
+        <div class="about-tag">🧪 Powders & Surf</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products-section">
+  <div class="sec-header reveal">
+    <p class="eyebrow">What We Offer</p>
+    <h2 class="sec-title">Our Product Range</h2>
+  </div>
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" onclick="filterP('all',this)">All</button>
+    <button class="filter-btn" onclick="filterP('bathing',this)">🧼 Bathing Soaps</button>
+    <button class="filter-btn" onclick="filterP('washing',this)">👕 Washing Soaps</button>
+    <button class="filter-btn" onclick="filterP('handwash',this)">🫧 Handwash</button>
+    <button class="filter-btn" onclick="filterP('liquids',this)">🧴 Liquids</button>
+    <button class="filter-btn" onclick="filterP('fresheners',this)">🌸 Air Fresheners</button>
+    <button class="filter-btn" onclick="filterP('powder',this)">🧪 Powders</button>
+  </div>
+  <div class="products-grid" id="pg">
+
+    <div class="pcard reveal" data-cat="bathing">
+      <img class="pcard-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAAACXBIWXMAAAsSAAALEgHS3X78AAAgAElEQVR42ny8UZYkR5IkJqKq5h6ZBaDfLGd3b8A78AI8Bq/BU/FU/OF7w53pnkZlRriZivDDIrIK6F7GAwqFyEh3D3dTVVERUeP/9X/+b8mICAAAKjDGyMzutd+x3WjbtgFE8ev9/Q4AkrBJSoskyeu61lqZudqgoDYEYJ9HkhEOGpyGGUIZlMDjl9v7L7fb+9v7O7PmfNiec9p2cIzz/dsvb99+rfPWju72Yq/74/pdfZevta46xq+//jrGIBNMaV16TH2s9ZBXxP379++D5/v7t2RVHm9v3zKz9REpY2UmWJlj1Pn5eWf/ba1r+rqu+8fn79f66P685u8J2rJENURof58YY9DzDN2KYXte7kljTZ23zIIkTdw/Ne+LTKwZVeOIccN4wxg5zjHGUeMkEwhJj8fnvD4q4ziO9bhr9Vpak2vicfXUyuL7L+ft1/P85cwbUemMS3y07jp+v+bfPvtjopHIY5qz+Xhcq3uppzqrbm/n7XarqoGRrMfn9R//9h9//fe/rscCYKm9fnn/9ttvv/3rf/tXZEjy6nl/6O/38+009TE/x2109+fvf7+9nYi8zyve3t5/+TVZN1VNz++f+NvHdV10kGyLxXo76kiOiDNxUgWcwXEY0S3URGuYR2TFOOM4UFxOoR/2hTFr6MhVqQgkcq/kAMIMIOACEJEkEHTYXKadTfLhRuwAyHBSYAPyWgpWRoRhgUDGyEyj95qPiL3ULe5YyBwkf44LAIwyul9vkoyo/Ys7iACU7Ybcz18zgAlJ+6/7c4K+jrtWk/xxBa9XkLYlff306xyvKA3Qr+C1LDANAySZkYwkE+O83W5jZETA4uuw0hpxVkVVPmPeAsBYkY40AJpAZSaZxMgYJtZa3b0zR3dfjwuuGGfl+xjj7Xw/z2GbPVY/ujujGLTd3VJrzu4lyjbJjLAjItyCbTfsICIzUXRAizSgtYxrz
